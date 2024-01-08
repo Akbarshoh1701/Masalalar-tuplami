@@ -127,3 +127,30 @@ print("Number of arithmetic subsequences:", output)
         return nums+nums"""
 
 
+#misol-9: 1512. Yaxshi juftliklar soni
+
+"""class Solution:
+    def numIdenticalPairs(self, nums: list[int]) -> int:
+        count_dict = {}
+        result = 0
+
+        for num in nums:
+            count_dict[num] = count_dict.get(num, 0) + 1
+
+        for count in count_dict.values():
+            if count >= 2:
+                result += (count * (count - 1)) // 2
+
+        return result
+
+-------ikkinchu usuli--------
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        pairs = 0
+        for i in range(len(nums)-1):
+            for j in range((i+1), len(nums)):
+                if nums[i] == nums[j]:
+                    pairs += 1
+        return pairs
+
+"""
