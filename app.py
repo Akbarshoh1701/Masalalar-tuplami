@@ -33,13 +33,22 @@
 
 #4-misol 35. Search Insert Position
 
-# class Solution:
-#     def searchInsert(self, nums: list[int], target: int) -> int:
-#         if num == tar
+"""class Solution:
+    def searchInsert(self, nums: list[int], target: int) -> int:
+        for i in range(len(nums)):
+            if nums[i] >= target:
+                return i
+        return len(nums)
+
+#clasni chaqirib olamiz
+solution_instance = Solution()
+
+# Misolda searchInsert usulini chaqiring
+result = solution_instance.searchInsert([1, 2, 3, 5], 4)
+print(result)"""
 
 
-
-#misol 5 == 13. Rimdan butun songa
+""" #misol 5 == 13. Rimdan butun songa
 
 class Solution:
     def romanToInt(self, s: str) -> int:
@@ -70,6 +79,44 @@ result = solution_instance.romanToInt("Iv")
 
 # Print the result
 print(result)
+"""
+
+# misol-6, 446. Arithmetic Slices II - Subsequence
+
+"""class Solution:
+    def numberOfArithmeticSlices(self, nums: list[int]) -> int:
+        n = len(nums)
+        if n < 3:
+            return 0
+
+        total_count = 0
+        dp = [{} for _ in range(n)]
+
+        for i in range(n):
+            for j in range(i):
+                diff = nums[i] - nums[j]
+                dp[i][diff] = dp[i].get(diff, 0) + 1
+
+                if diff in dp[j]:
+                    dp[i][diff] += dp[j][diff]
+                    total_count += dp[j][diff]
+
+        return total_count
+
+# Example usage:
+# Create an instance of the Solution class
+solution = Solution()
+
+# Test the example
+nums = [2, 4, 6, 8, 10]
+output = solution.numberOfArithmeticSlices(nums)
+print("Number of arithmetic subsequences:", output)
+"""
+
+#misol-7: 2769. Find the Maximum Achievable Number
+"""class Solution:
+    def theMaximumAchievableX(self, num: int, t: int) -> int:
+        return num + (t * 2)"""
 
 
 
