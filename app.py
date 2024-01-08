@@ -190,3 +190,30 @@ class Solution:
     def sum(self, num1: int, num2: int) -> int:
         return num1 + num2"""
 
+#misol-13: 709. To Lower Case
+"""
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        return s.lower()
+"""
+
+# misol-14:
+class Solution:
+    def maxProductDifference(self, nums: list[int]) -> int:
+        nums.sort()# listni tartiblab olamiz
+        max1, max2 = nums[-1], nums[-2]
+        min1, min2 = nums[0], nums[1]
+        return (max1 * max2) - (min1 * min2)
+
+solution = Solution()
+nums = [4, 2, 5, 9, 7, 4, 8]
+result = solution.maxProductDifference(nums)
+print(result)
+
+
+
+
+
+
+
+
