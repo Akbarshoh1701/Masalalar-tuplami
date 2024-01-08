@@ -31,17 +31,46 @@
 
 """
 
-#4-misol
+#4-misol 35. Search Insert Position
+
+# class Solution:
+#     def searchInsert(self, nums: list[int], target: int) -> int:
+#         if num == tar
+
+
+
+#misol 5 == 13. Rimdan butun songa
+
 class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        resalt = ""
-        bir, ikki = len(word1), len(word2)
-        nev_list = min(bir, ikki)
+    def romanToInt(self, s: str) -> int:
+        son = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        rezalt = 0
+        prev_value = 0
+        s = s.upper()
 
-        for i in range(nev_list):
-            resalt += word1[1] + word2[i]
+        for i in s:
+            if i not in son:
+                return "Noto'g'ri belgi kiritildi"
 
-        resalt += word1[nev_list:] + word2[nev_list:]
+            current_value = son[i]
+            if current_value > prev_value:
+                rezalt += current_value - 2 * prev_value
+            else:
+                rezalt += current_value
+            prev_value = current_value
+
+        return rezalt
+
+
+# Create an instance of the Solution class
+solution_instance = Solution()
+
+# Call the romanToInt method on the instance
+result = solution_instance.romanToInt("Iv")
+
+# Print the result
+print(result)
+
 
 
 
