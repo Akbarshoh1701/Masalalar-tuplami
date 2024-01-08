@@ -154,3 +154,16 @@ class Solution:
         return pairs
 
 """
+
+
+#misol-10:
+
+class Solution:
+    def shuffle(self, nums: list[int], n: int) -> list[int]:
+        new_list = []
+        for i in range(n):
+            new_list.append(nums[i])
+            new_list.append(nums[i + n])
+        return new_list
+
+
