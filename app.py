@@ -226,6 +226,19 @@ print(result)
 
         return original_sentence"""
 
+#misol-16:1281. Subtract the Product and Sum of Digits of an Integer
+"""
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        n = str(n)
+        kupaytma = 1
+        yigindi = 0
+        for i in n:
+            i = int(i)
+            kupaytma *= i
+            yigindi += i
+        return kupaytma - yigindi
+    """
 
 
 
