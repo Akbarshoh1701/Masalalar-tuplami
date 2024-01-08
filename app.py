@@ -184,3 +184,9 @@ class Solution:
     def findWordsContaining(self, words: List[str], x: str) -> List[int]:
         return [i for i in range(len(words)) if x in words[i]]
 """
+
+#misol-12: 2235. Add Two Integers
+"""class Solution:
+    def sum(self, num1: int, num2: int) -> int:
+        return num1 + num2"""
+
