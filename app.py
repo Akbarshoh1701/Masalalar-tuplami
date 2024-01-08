@@ -197,7 +197,8 @@ class Solution:
         return s.lower()
 """
 
-# misol-14:
+# misol-14:1913. Maximum Product Difference Between Two Pairs
+"""
 class Solution:
     def maxProductDifference(self, nums: list[int]) -> int:
         nums.sort()# listni tartiblab olamiz
@@ -209,6 +210,25 @@ solution = Solution()
 nums = [4, 2, 5, 9, 7, 4, 8]
 result = solution.maxProductDifference(nums)
 print(result)
+"""
+
+#misol-15: 1859. Sorting the Sentence
+"""class Solution:
+    def sortSentence(self, s: str) -> str:
+        # Split the shuffled sentence into a list of words
+        words = s.split()
+
+        # Sort the words based on the appended numbers
+        sorted_words = sorted(words, key=lambda word: int(word[-1]))
+
+        # Remove the numbers from each word
+        original_sentence = ' '.join(word[:-1] for word in sorted_words)
+
+        return original_sentence"""
+
+
+
+
 
 
 
