@@ -120,6 +120,10 @@ print("Number of arithmetic subsequences:", output)
 
 
 
+#misol-8: 1929. Concatenation of Array
 
+"""class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        return nums+nums"""
 
 
