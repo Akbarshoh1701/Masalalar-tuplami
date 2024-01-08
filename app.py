@@ -156,14 +156,31 @@ class Solution:
 """
 
 
-#misol-10:
-
+#misol-10:1470. Shuffle the Array
+"""
 class Solution:
     def shuffle(self, nums: list[int], n: int) -> list[int]:
         new_list = []
         for i in range(n):
             new_list.append(nums[i])
             new_list.append(nums[i + n])
+        return new_list"""
+
+#misol-11: 2942. Find Words Containing Character
+"""
+from typing import List
+
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        new_list = []
+        for i, word in enumerate(words):
+            if x in word:
+                new_list.append(i)
         return new_list
 
+---ikkinchi usul qulayi----
 
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        return [i for i in range(len(words)) if x in words[i]]
+"""
