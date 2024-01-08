@@ -239,8 +239,18 @@ class Solution:
             yigindi += i
         return kupaytma - yigindi
     """
-
-
+#misol-17: 2114. Maximum Number of Words Found in Sentences
+"""
+class Solution:
+    def mostWordsFound(self, sentences: list[str]) -> int:
+        new_list = []
+        for i in sentences:
+            son = i.split()
+            uzinlik = len(son)
+            new_list.append(uzinlik)
+        rezalt = max(new_list)
+        return rezalt
+"""
 
 
 
