@@ -252,8 +252,55 @@ class Solution:
         return rezalt
 """
 
+#18-misol: 1. Two Sum
+"""
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        num_dict = {}
 
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in num_dict:
+                return [num_dict[complement], i]
+            num_dict[num] = i
 
+        # No valid solution found
+        return []
+2 ushuli
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        length = len(nums)
+        for i in range(length):
+            for j in range(i + 1, length):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+"""
+
+#19-misol: 12. Integer to Roman
+"""
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        # Creating Dictionary for Lookup
+        num_map = {
+            1: "I",
+            5: "V", 4: "IV",
+            10: "X", 9: "IX",
+            50: "L", 40: "XL",
+            100: "C", 90: "XC",
+            500: "D", 400: "CD",
+            1000: "M", 900: "CM",
+        }
+
+        # Result Variable
+        r = ''
+
+        for n in [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]:
+            # If n in list then add the roman value to result variable
+            while n <= num:
+                r += num_map[n]
+                num -= n
+        return r
+"""
 
 
 
