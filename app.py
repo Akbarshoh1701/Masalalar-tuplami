@@ -344,3 +344,17 @@ class Solution:
         return min_val, max_val
 
 """
+
+# 22-misol: 2974. Minimum Number Game
+"""
+class Solution:
+    def numberGame(self, nums: list[int]) -> list[int]:
+        nums.sort()# listni tartiblab olamiz
+        result = []
+        for i in range(0, len(nums), 2):#bu yerda listni uzunligini oldim va uni range da 2 qadam bilan yurgizib oldim
+            result.append(nums[i + 1])#Bob olgan songa teng buladi chunki u Alice dan kiyin oladi
+            result.append(nums[i])#bu Alice olgani
+
+        return result
+"""
+
