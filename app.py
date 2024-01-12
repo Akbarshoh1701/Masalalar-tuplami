@@ -1,4 +1,3 @@
-
 """1-misol
 
 # class Solution:
@@ -6,8 +5,7 @@
 #         return address.replace(".", "[.]")
 # # """
 
-
-#2-misol
+# 2-misol
 """class Solution:
     def buildArray(self, nums: list[int]) -> list[int]:
         new_list = []
@@ -17,7 +15,7 @@
         return new_list
 """
 
-#3 mispl
+# 3 mispl
 """class Solution:
     def finalValueAfterOperations(self, operations: list[str]) -> int:
         X = 0
@@ -31,7 +29,7 @@
 
 """
 
-#4-misol 35. Search Insert Position
+# 4-misol: 35. Search Insert Position
 
 """class Solution:
     def searchInsert(self, nums: list[int], target: int) -> int:
@@ -46,7 +44,6 @@ solution_instance = Solution()
 # Misolda searchInsert usulini chaqiring
 result = solution_instance.searchInsert([1, 2, 3, 5], 4)
 print(result)"""
-
 
 """ #misol 5 == 13. Rimdan butun songa
 
@@ -113,21 +110,18 @@ output = solution.numberOfArithmeticSlices(nums)
 print("Number of arithmetic subsequences:", output)
 """
 
-#misol-7: 2769. Find the Maximum Achievable Number
+# misol-7: 2769. Find the Maximum Achievable Number
 """class Solution:
     def theMaximumAchievableX(self, num: int, t: int) -> int:
         return num + (t * 2)"""
 
-
-
-#misol-8: 1929. Concatenation of Array
+# misol-8: 1929. Concatenation of Array
 
 """class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
         return nums+nums"""
 
-
-#misol-9: 1512. Yaxshi juftliklar soni
+# misol-9: 1512. Yaxshi juftliklar soni
 
 """class Solution:
     def numIdenticalPairs(self, nums: list[int]) -> int:
@@ -155,8 +149,7 @@ class Solution:
 
 """
 
-
-#misol-10:1470. Shuffle the Array
+# misol-10:1470. Shuffle the Array
 """
 class Solution:
     def shuffle(self, nums: list[int], n: int) -> list[int]:
@@ -166,7 +159,7 @@ class Solution:
             new_list.append(nums[i + n])
         return new_list"""
 
-#misol-11: 2942. Find Words Containing Character
+# misol-11: 2942. Find Words Containing Character
 """
 from typing import List
 
@@ -185,12 +178,12 @@ class Solution:
         return [i for i in range(len(words)) if x in words[i]]
 """
 
-#misol-12: 2235. Add Two Integers
+# misol-12: 2235. Add Two Integers
 """class Solution:
     def sum(self, num1: int, num2: int) -> int:
         return num1 + num2"""
 
-#misol-13: 709. To Lower Case
+# misol-13: 709. To Lower Case
 """
 class Solution:
     def toLowerCase(self, s: str) -> str:
@@ -212,7 +205,7 @@ result = solution.maxProductDifference(nums)
 print(result)
 """
 
-#misol-15: 1859. Sorting the Sentence
+# misol-15: 1859. Sorting the Sentence
 """class Solution:
     def sortSentence(self, s: str) -> str:
         # Split the shuffled sentence into a list of words
@@ -226,7 +219,7 @@ print(result)
 
         return original_sentence"""
 
-#misol-16:1281. Subtract the Product and Sum of Digits of an Integer
+# misol-16:1281. Subtract the Product and Sum of Digits of an Integer
 """
 class Solution:
     def subtractProductAndSum(self, n: int) -> int:
@@ -239,7 +232,7 @@ class Solution:
             yigindi += i
         return kupaytma - yigindi
     """
-#misol-17: 2114. Maximum Number of Words Found in Sentences
+# misol-17: 2114. Maximum Number of Words Found in Sentences
 """
 class Solution:
     def mostWordsFound(self, sentences: list[str]) -> int:
@@ -252,7 +245,7 @@ class Solution:
         return rezalt
 """
 
-#18-misol: 1. Two Sum
+# 18-misol: 1. Two Sum
 """
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
@@ -276,7 +269,7 @@ class Solution:
                     return [i,j]
 """
 
-#19-misol: 12. Integer to Roman
+# 19-misol: 12. Integer to Roman
 """
 class Solution:
     def intToRoman(self, num: int) -> str:
@@ -302,8 +295,52 @@ class Solution:
         return r
 """
 
+# 20-misol: 1704. Determine if String Halves Are Alike
+# """
+# class Solution:
+#     def halvesAreAlike(self, s: str) -> bool:
+#         def unli_son(strng):
+#             """bu funksiya str qiymat qabul qiladi va unda nechta unli har qatnashganligini qaytaradi int:"""
+#             unli = set('aeiouAEIOU')# unliy harflar
+#             result = 0# bu yerda unli sonlarni sonini xisoblab boradi
+#             for i in strng:# bu yerda kelgan str elimintlarini aylantiradi
+#                 if i in unli:#elimentlarni tekshiradi unli
+#                     result += 1# agar unliy bulsa result ga 1 qushib quyadi
+#             return result# va qiymatni qaytaradi turi int
+#         uzunlik = len(s)#bizga berilgan asil str ning uzunligini olamiz
+#         yarimi = uzunlik // 2# va uni urtasini topish uchun uni 2 ga bulamiz
+#         birinchi_qism = s[:yarimi]# bu yerda str ning boshidan yarmigacha bulgan qismini olamiz
+#         ikkinchi_qism = s[yarimi:]# bu yerda yarmidan oxirigacha olamiz
+#
+# return unli_son(birinchi_qism) == unli_son(ikkinchi_qism)# va nixoyat funksiyadan qaytgan natijalarni solishtirib
+# javab qaytaramiz """
 
+# 21-misol: 1026. Maximum Difference Between Node and Ancestor
 
+"""
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = self.right = None
 
+class Solution:
+    def maxAncestorDiff(self, root):
+        m = [0]
+        self.dfs(root, m)
+        return m[0]
 
+    def dfs(self, root, m):
+        if not root:
+            return float('inf'), float('-inf')
 
+        left = self.dfs(root.left, m)
+        right = self.dfs(root.right, m)
+
+        min_val = min(root.val, min(left[0], right[0]))
+        max_val = max(root.val, max(left[1], right[1]))
+
+        m[0] = max(m[0], max(abs(min_val - root.val), abs(max_val - root.val)))
+
+        return min_val, max_val
+
+"""
