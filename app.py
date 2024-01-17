@@ -357,4 +357,74 @@ class Solution:
 
         return result
 """
+#23-misol: 2225. Find Players With Zero or One Losses
+"""
+class Solution:
+    def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
+        match_map = {}
+        
+        for el in matches:
+            won = el[0]
+            lost = el[1]
+            if won not in match_map:
+               match_map[won] = [0,0]
+            
+            if lost not in match_map:
+                match_map[lost] = [0,0]
+            
+            match_map[won][0] += 1
+            match_map[lost][1] -= 1
+        
+        ans = [[],[]]
+        for key in sorted(match_map):
+            won = match_map[key][0]
+            lost = match_map[key][1]
+            if lost == 0:
+                ans[0].append(key)
+            elif lost == -1:
+                ans[1].append(key)
 
+        return ans
+        
+"""
+
+
+#misol-24: 21. Merge Two Sorted Lists
+"""class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode()
+        current = dummy
+
+        while list1 and list2:
+            if list1.val < list2.val:
+                current.next = list1
+                list1 = list1.next
+            else:
+                current.next = list2
+                list2 = list2.next
+
+            current = current.next
+
+        # If one of the lists is not empty, append the remaining nodes
+        if list1:
+            current.next = list1
+        elif list2:
+            current.next = list2
+
+        return dummy.next
+
+"""
+
+#misol : 1207. Unique Number of Occurrences
+
+"""
+
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        return len(set(Counter(arr).values()))==len(Counter(arr).values())
+"""
