@@ -462,7 +462,69 @@ class Solution:
 
 
 # misol: 9. Palindrome Number
-class Solution:
+"""class Solution:
     def isPalindrome(self, x: int) -> bool:
         son = str(x)
         return son == son[::-1]
+"""
+
+"""
+#misol 2974. Minimum Number Game
+class Solution:
+    def numberGame(self, nums: list[int]) -> list[int]:
+        nums.sort() # bu yerdakelgan listni tartiblab olamiz
+        arr = [] # bu bush tuplam
+        while nums:# numsda elimint bulsa true qiymat qaytaradi aks xolda false qiymat qaytarib takrorklanish tuxtaydi
+            alic_move = nums.pop(0) #Alic  sonini olishi
+            bob_move = nums.pop(0) #bob sonini olishi
+            arr.append(bob_move)
+            arr.append(alic_move)
+        return arr
+"""
+
+#misol 576. Out of Boundary Paths
+
+"""
+class Solution:
+    MOD = 10**9 + 7
+
+    def findPaths(self, m: int, n: int, maxMove: int, startRow: int, startColumn: int) -> int:
+        # Memoization dictionary to store the number of paths for each cell at each move
+        memo = {}
+        
+        def dfs(x, y, move):
+            # If the move count exceeds maxMove or the cell is out of bounds, return 0
+            if move > maxMove or x < 0 or x >= m or y < 0 or y >= n:
+                return 1
+            
+            # If the number of moves left is zero, there are no more valid moves
+            if move == 0:
+                return 0
+            
+            # If the result for the current cell at the current move is already calculated, return it
+            if (x, y, move) in memo:
+                return memo[(x, y, move)]
+            
+            # Calculate the number of paths recursively by considering all four possible moves
+            paths = 0
+            for dx, dy in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                paths += dfs(x + dx, y + dy, move - 1)
+                paths %= self.MOD
+            
+            # Memoize the result for the current cell at the current move
+            memo[(x, y, move)] = paths
+            return paths
+        
+        # Start the depth-first search from the starting cell with maxMove moves left
+        return dfs(startRow, startColumn, maxMove)
+
+# Example usage:
+m = 2
+n = 2
+maxMove = 2
+startRow = 0
+startColumn = 0
+solution = Solution()
+print(solution.findPaths(m, n, maxMove, startRow, startColumn))  # Output: 6
+
+"""
