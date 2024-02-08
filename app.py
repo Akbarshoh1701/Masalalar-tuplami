@@ -693,3 +693,21 @@ class Solution:
 
         return "" if min_len == float('inf') else s[start_index:start_index + min_len]
 """
+
+
+
+"""
+misol: 279. Perfect Squares
+class Solution:
+    def numSquares(self, n: int) -> int:
+        dp = [float('inf')] * (n + 1) # musbat butun sonlar uchun kerakli kataklar ochib oldik 
+        dp[0] = 0 # 0 elimin javobi xam 0 buladi
+        # sonlarni har birini hisoblab chiqamiz keraklisini olamiz
+        for i in range(1, n + 1):
+            j = 1
+            while j * j <= i:
+                dp[i] = min(dp[i], dp[i - j * j ] + 1)
+                j += 1
+        return dp[n]
+        
+"""
