@@ -358,7 +358,7 @@ class Solution:
 
         return result
 """
-#23-misol: 2225. Find Players With Zero or One Losses
+# 23-misol: 2225. Find Players With Zero or One Losses
 """
 class Solution:
     def findWinners(self, matches: List[List[int]]) -> List[List[int]]:
@@ -389,8 +389,7 @@ class Solution:
         
 """
 
-
-#misol-24: 21. Merge Two Sorted Lists
+# misol-24: 21. Merge Two Sorted Lists
 """class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -421,7 +420,7 @@ class Solution:
 
 """
 
-#misol : 1207. Unique Number of Occurrences
+# misol : 1207. Unique Number of Occurrences
 
 """
 
@@ -429,7 +428,6 @@ class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         return len(set(Counter(arr).values()))==len(Counter(arr).values())
 """
-
 
 # misol: 907. Sum of Subarray Minimums
 
@@ -461,7 +459,6 @@ class Solution:
         return result 
 """
 
-
 # misol: 9. Palindrome Number
 """class Solution:
     def isPalindrome(self, x: int) -> bool:
@@ -483,7 +480,7 @@ class Solution:
         return arr
 """
 
-#misol 576. Out of Boundary Paths
+# misol 576. Out of Boundary Paths
 
 """
 class Solution:
@@ -557,7 +554,7 @@ print(solution.findPaths(m, n, maxMove, startRow, startColumn))  # Output: 6
 #         return arr
 
 
-#misol:2966. Divide Array Into Arrays With Max Difference
+# misol:2966. Divide Array Into Arrays With Max Difference
 """
 class Solution:
     def divideArray(self, nums: List[int], k: int) -> List[List[int]]:
@@ -634,8 +631,6 @@ class Solution:
 
 """
 
-
-
 """
 misol : 1043. Partition Array for Maximum Sum
 class Solution:
@@ -656,7 +651,6 @@ class Solution:
         return dp[0]
 
 """
-
 
 """
 # misol: 76. Minimum Window Substring
@@ -694,8 +688,6 @@ class Solution:
         return "" if min_len == float('inf') else s[start_index:start_index + min_len]
 """
 
-
-
 """
 misol: 279. Perfect Squares
 class Solution:
@@ -709,5 +701,47 @@ class Solution:
                 dp[i] = min(dp[i], dp[i - j * j ] + 1)
                 j += 1
         return dp[n]
+"""
+"""
+class Solution:
+    def checkRecord(self, s: str) -> bool:
+        absent_count = 0
+        late_count = 0
         
+        for i in range(len(s)):
+            if s[i] == 'A':
+                absent_count += 1
+                if absent_count >= 2:
+                    return False
+            if s[i] == 'L':
+                late_count += 1
+                if late_count >= 3:
+                    return False
+            else:
+                late_count = 0
+                
+        return True
+"""
+
+"""
+# misaol:368. Largest Divisible Subset
+
+from typing import List
+
+class Solution:
+    def largestDivisibleSubset(self, nums: List[int]) -> List[int]:
+        if not nums:
+            return []
+
+        nums.sort()
+        dp = [[] for _ in range(len(nums))]
+
+        for i in range(len(nums)):
+            max_subset = []
+            for j in range(i):
+                if nums[i] % nums[j] == 0 and len(dp[j]) > len(max_subset):
+                    max_subset = dp[j]
+            dp[i] = max_subset + [nums[i]]
+
+        return max(dp, key=len)
 """
