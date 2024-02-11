@@ -745,3 +745,204 @@ class Solution:
 
         return max(dp, key=len)
 """
+
+"""
+647. Palindromic Substrings
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        n = len(s)
+        count = 0
+        # Initialize a table to store whether substrings are palindromic or not
+        dp = [[False] * n for _ in range(n)]
+
+        # Every single character is a palindrome
+        for i in range(n):
+            dp[i][i] = True
+            count += 1
+
+        # Check for palindromes of length 2
+        for i in range(n - 1):
+            if s[i] == s[i + 1]:
+                dp[i][i + 1] = True
+                count += 1
+
+        # Check for palindromes of length greater than 2
+        for length in range(3, n + 1):
+            for i in range(n - length + 1):
+                j = i + length - 1
+                if s[i] == s[j] and dp[i + 1][j - 1]:
+                    dp[i][j] = True
+                    count += 1
+
+        return count
+
+# Example usage:
+solution = Solution()
+print(solution.countSubstrings("abc"))  # Output should be 3 (a, b, c)
+
+"""
+
+"""
+387. First Unique Character in a String
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        for i in s:
+            if s.count(i) < 2:
+                return s.index(i)
+            return -1
+"""
+"""
+1480. Running Sum of 1d Array
+class Solution:
+    def runningSum(self, nums: List[int]) -> List[int]:
+        rezalt = 0
+        rezalt_list = []
+        for i in nums:
+            rezalt += i
+            rezalt_list.append(rezalt)
+
+        return rezalt_list
+"""
+
+"""
+412. Fizz Buzz
+
+class Solution:
+    def fizzBuzz(self, n: int) -> list[str]:
+
+        new_list = []
+        for i in range(1, n+1):
+            if i % 3 == 0 and i % 5 != 0:
+                new_list.append("Fizz")
+            elif i % 5 == 0 and i % 3 != 0:
+                new_list.append("Buzz")
+            elif i % 3 == 0 and i % 5 == 0:
+                new_list.append("FizzBuzz")
+            else:
+                new_list.append(str(i))
+        return new_list
+"""
+
+"""
+1342. Number of Steps to Reduce a Number to Zero
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        step = 0
+        while num:
+            if num % 2 == 0:
+                num = num / 2
+                step += 1
+            else:
+                num -= 1    
+                step += 1
+        return step
+"""
+
+"""
+876. Middle of the Linked List
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        slow = fast = head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+"""
+
+
+"""
+383. Ransom Note
+from collections import Counter
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        # Count the occurrences of characters in magazine
+        mag_count = Counter(magazine)
+        
+        # Iterate through each character in ransomNote
+        for char in ransomNote:
+            # If the character is not present in magazine or its count is zero,
+            # then it's not possible to construct ransomNote
+            if char not in mag_count or mag_count[char] == 0:
+                return False
+            # Decrement the count of the character in magazine
+            mag_count[char] -= 1
+        
+        return True
+
+# Example usage:
+solution = Solution()
+print(solution.canConstruct("aab", "baa"))  # Output: True
+
+"""
+
+"""
+1768. Merge Strings Alternately
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        new_list = ''
+        if len(word1) >= len(word2):
+            for i in range(len(word2)):
+                new_list += word1[i]+word2[i]
+            new_list += word1[len(word2):]
+        else:
+            for i in range(len(word1)):
+                new_list += word1[i] + word2[i]
+            new_list += word2[len(word1):]
+        return new_list
+
+ # eng maqul usuli    
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        return "".join([f"{w1}{w2}" for w1, w2 in zip(word1, word2)]) + word1[len(word2):] + word2[len(word1):]
+"""
+"""
+9. Palindrome Number
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        x = str(x)
+
+        if x == x[::-1]:
+            return True
+        return False
+"""
+
+"""
+1463. Cherry Pickup II
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        new_str = ''
+        s = list(s)
+        num = 1
+        if num < len(s):
+            new_str += s.pop(num)
+            num += numRows
+        else:
+            nums = 0
+            new_str += s.pop(num)
+        return new_str
+"""
+"""
+class Solution:
+    def cherryPickup(self, grid: List[List[int]]) -> int:
+        m, n = len(grid), len(grid[0])
+        dp = [[[-1] * n for _ in range(n)] for _ in range(m)]
+        dp[0][0][n-1] = grid[0][0] + grid[0][n-1]
+
+        for i in range(1, m):
+            for j in range(n):
+                for k in range(j+1, n):
+                    for x in range(-1, 2):
+                        for y in range(-1, 2):
+                            if 0 <= j+x < n and 0 <= k+y < n:
+                                prev = dp[i-1][j+x][k+y]
+                                if prev != -1:
+                                    dp[i][j][k] = max(dp[i][j][k], prev + grid[i][j] + (grid[i][k] if j != k else 0))
+
+        ans = max(max(row) for row in dp[m-1])
+        return ans if ans != -1 else 0"""
