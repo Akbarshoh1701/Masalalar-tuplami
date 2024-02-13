@@ -946,3 +946,63 @@ class Solution:
 
         ans = max(max(row) for row in dp[m-1])
         return ans if ans != -1 else 0"""
+
+"""
+169. Majority Element
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        hash = {}
+        res = majority = 0
+        
+        for n in nums:
+            hash[n] = 1 + hash.get(n, 0)
+            if hash[n] > majority:
+                res = n
+                majority = hash[n]
+        
+        return res"""
+"""
+2108. Find First Palindromic String in the Array
+
+class Solution:
+    def firstPalindrome(self, words: List[str]) -> str:
+        for i in words:
+            if i[::] == i[::-1]:
+                return i
+        return  ""
+"""
+
+from typing import List
+
+"""
+15. 3Sum
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        result = []
+        nums.sort()  # Sort the array to easily skip duplicates and optimize the search
+
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i] == nums[i - 1]:  # Skip duplicates
+                continue
+
+            left = i + 1
+            right = len(nums) - 1
+
+            while left < right:
+                total = nums[i] + nums[left] + nums[right]
+
+                if total == 0:
+                    result.append([nums[i], nums[left], nums[right]])
+                    left += 1
+                    right -= 1
+                    while left < right and nums[left] == nums[left - 1]:  # Skip duplicates
+                        left += 1
+                    while left < right and nums[right] == nums[right + 1]:  # Skip duplicates
+                        right -= 1
+                elif total < 0:
+                    left += 1
+                else:
+                    right -= 1
+
+        return result
+"""
