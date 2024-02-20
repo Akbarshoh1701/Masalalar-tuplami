@@ -4,6 +4,7 @@
 #     def defangIPaddr(self, address: str) -> str:
 #         return address.replace(".", "[.]")
 # # """
+import math
 from typing import Optional
 
 # 2-misol
@@ -1005,4 +1006,78 @@ class Solution:
                     right -= 1
 
         return result
+"""
+
+"""
+2149. Rearrange Array Elements by Sign
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        new_list = []
+        manfi = []
+        musbat = []
+        for i in nums:
+            if i > 0:
+                musbat.append(i)
+            elif i < 0:
+                manfi.append(i)
+        for j in range(len(manfi)):
+            new_list.append(musbat[j])
+            new_list.append(manfi[j])
+        return new_list
+    
+ """
+
+"""
+import heapq
+
+def furthestBuilding(heights, bricks, ladders):
+    n = len(heights)
+    heap = []
+
+    for i in range(n - 1):
+        diff = heights[i + 1] - heights[i]
+        if diff > 0:
+            heapq.heappush(heap, diff)
+            if len(heap) > ladders:
+                bricks -= heapq.heappop(heap)
+            if bricks < 0:
+                return i
+
+    return n - 1
+
+# Example usage:
+heights1 = [4,2,7,6,9,14,12]
+bricks1 = 5
+ladders1 = 1
+print(furthestBuilding(heights1, bricks1, ladders1))  # Output: 4
+
+heights2 = [4,12,2,7,3,18,20,3,19]
+bricks2 = 10
+ladders2 = 2
+print(furthestBuilding(heights2, bricks2, ladders2))  # Output: 7
+
+heights3 = [14,3,19,3]
+bricks3 = 17
+ladders3 = 0
+print(furthestBuilding(heights3, bricks3, ladders3))  # Output: 3
+
+
+"""
+"""
+import math
+
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        if n <= 0:
+            return False
+        return math.log2(n).is_integer()
+"""
+
+"""
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        s = sum(nums)
+        return ((n * (n + 1)) // 2) - s
+
 """
