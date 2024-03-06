@@ -1081,3 +1081,76 @@ class Solution:
         return ((n * (n + 1)) // 2) - s
 
 """
+
+
+"""
+shift = 0
+    while left != right:
+        left >>= 1
+        right >>= 1
+        shift += 1
+    # Left shift back to obtain the common prefix
+    return left << shift
+"""
+
+"""def Index(nums, tg):
+    for i in nums:
+        for j in nums:
+            if i+j == tg:
+                return [i, j]"""
+
+"""
+2864. Maximum Odd Binary Number
+class Solution:
+    def maximumOddBinaryNumber(self, s: str) -> str:
+        sorted_s = sorted(s, reverse=True)
+        for i in range(len(s) - 1, -1, -1):
+            if sorted_s[i] == '1':
+                sorted_s[i], sorted_s[-1] = sorted_s[-1], sorted_s[i]
+                break
+        return ''.join(sorted_s)
+"""
+
+"""
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        return sorted([i**2 for i in nums])
+"""
+
+
+"""
+class Solution:
+    def bagOfTokensScore(self, tokens: List[int], power: int) -> int:
+        result = 0
+        if len(tokens) > 1:
+            for i in tokens:
+                if i > power:
+                    result += 1
+        elif tokens:
+            if tokens[0] > power:
+                result += 1
+
+        return result
+"""
+
+#141. Linked List Cycle
+"""
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
+        fast = slow = head
+        
+        while fast and fast.next:
+            slow, fast = slow.next, fast.next.next
+            if fast == slow:
+                return True
+        
+        return False
+"""
+
+
