@@ -855,7 +855,6 @@ class Solution:
         return slow
 """
 
-
 """
 383. Ransom Note
 from collections import Counter
@@ -1082,7 +1081,6 @@ class Solution:
 
 """
 
-
 """
 shift = 0
     while left != right:
@@ -1117,7 +1115,6 @@ class Solution:
         return sorted([i**2 for i in nums])
 """
 
-
 """
 class Solution:
     def bagOfTokensScore(self, tokens: List[int], power: int) -> int:
@@ -1133,7 +1130,7 @@ class Solution:
         return result
 """
 
-#141. Linked List Cycle
+# 141. Linked List Cycle
 """
 # Definition for singly-linked list.
 # class ListNode:
@@ -1154,4 +1151,30 @@ class Solution:
 """
 
 
-"hello"
+"""
+Given a string s consisting of words and spaces, return the length of the last word in the string.
+
+A word is a maximal 
+substring
+ consisting of non-space characters only.
+
+ 
+
+Example 1:
+
+Input: s = "Hello World"
+Output: 5
+Explanation: The last word is "World" with length 5.
+
+
+58. Length of Last Word
+
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        lest = s.split()
+        return len(lest[-1])
+
+"""
+
+
